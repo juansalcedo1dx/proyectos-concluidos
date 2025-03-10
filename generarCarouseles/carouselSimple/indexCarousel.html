@@ -1,0 +1,59 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head><
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Carousel con Botones</title>
+    <script src="CustomCarousel.js" defer></script>
+    <script src="ButtonEventListener.js" defer></script>
+    <script src="button-generator-General.js" defer></script>
+</head>
+<body>
+    <h1>Carrusel Controlado con Botones</h1>
+
+    <!-- Carrusel 1 -->
+    <custom-carousel 
+        data-images='["images/amanecerDos.jpeg", "images/amapolaSilvestre.jpeg", "images/atardecerUno.jpeg", "images/malvones.jpeg", "images/margaritasNaranjas.jpeg", "images/vegetales.jpeg"]' 
+        index-id="carousel-1">
+    </custom-carousel>
+
+    <user-defined-event-button 
+        label="Adelantar" 
+        instance-id="btn-1" 
+        control-index="carousel-1">
+    </user-defined-event-button>
+
+    <user-defined-event-button 
+        label="Atrasar" 
+        instance-id="btn-2" 
+        control-index="carousel-1">
+    </user-defined-event-button>
+
+    <button-event-listener 
+        event-name="user-defined-button-clicked" 
+        numero-de-imagenes="5" 
+        index-id="carousel-1">
+    </button-event-listener>
+
+    <!-- Carrusel 2 -->
+    <!-- <custom-carousel 
+    data-images='["imagesDos/arroz.jpeg", "imagesDos/belt.jpeg", "imagesDos/frutillas.jpeg", "imagesDos/mate.jpeg", "imagesDos/mensPant.jpeg", "imagesDos/nest.jpeg", "imagesDos/pant.jpeg", "imagesDos/sport men.jpeg", "imagesDos/suit men.jpeg", "imagesDos/tomates.jpeg", "imagesDos/t shirt.jpeg", "imagesDos/vegetales.jpeg"]' 
+    index-id="carousel-2">
+</custom-carousel>
+    <user-defined-event-button 
+        label="Adelantar" 
+        instance-id="btn-3" 
+        control-index="carousel-2">
+    </user-defined-event-button>
+    <user-defined-event-button 
+        label="Atrasar" 
+        instance-id="btn-4" 
+        control-index="carousel-2">
+    </user-defined-event-button>
+    <button-event-listener 
+        event-name="user-defined-button-clicked" 
+        numero-de-imagenes="12" 
+        index-id="carousel-2">
+    </button-event-listener> -->
+</body>
+</html>

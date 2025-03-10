@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Botón</title>
+    <script src="MiBotonSeparado.js" defer></script>
+    <link rel="stylesheet" href="estilosMiBoton.css">
+</head>
+<body>
+
+    <mi-boton label="Presionar"></mi-boton>
+
+    <script>
+        document.querySelector("mi-boton").addEventListener("boton-click", () => {
+            console.log("El evento 'boton-click' fue capturado en el DOM.");
+        });
+    </script>
+
+</body>
+</html>

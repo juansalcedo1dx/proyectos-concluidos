@@ -1,0 +1,195 @@
+:host(#wrapper1) {
+    display: block;
+}
+
+:host(#wrapper1) .container
+ {
+    width: 80%;
+    height: 90%;
+    background-color: lightblue;
+    position: absolute;
+    left: 0;
+    top: 10%;
+    bottom: 0;
+    z-index: 3;
+    resize: both;
+
+}
+:host(#wrapper) .dynamic-content {
+
+        width: 100%; /* Asegura que el contenido ocupe todo el ancho disponible */
+        max-width: 100%;
+        word-wrap: break-word; /* Asegura que el texto largo se divida en palabras */
+        margin-top: 0px;
+        font-weight: bold;
+        background-color: yellow;
+        overflow: hidden;
+        text-align: center;
+        white-space: normal; /* Permite saltos de línea */
+    }
+
+
+
+/* Corrección: Se usa `:host` para aislar estilos dentro de cada shadow DOM */
+/* child1 es Encabezado */
+:host(#child-1) {
+    display: block;
+}
+:host(#child-1) .container {
+    width: 40%;
+    height: 30%;
+    background-color: rgb(35, 17, 227);
+    position: absolute;
+    top: 0;
+    left: 150;
+    z-index: 4;
+    resize: both;
+}
+
+/* Child2 es Izquierdo. */
+:host(#child-2) {
+    display: block;
+}
+:host(#child-2) .container {
+    width: 10%;
+    height: 90%;
+    background-color: lightblue;
+    position: absolute;
+    left: 0;
+    top: 10%;
+    bottom: 0;
+    z-index: 3;
+    resize: both;
+
+}
+
+
+/* child3 es Derecho */
+:host(#child-3) {
+    display: block;
+}
+:host(#child-3) .container {
+    width: 10%;
+    height: 30%;
+    background-color: rgb(238, 238, 144);
+    position: absolute;
+    right: 0;
+    top: 10%;
+    bottom: 0;
+    z-index: 2;
+    resize: both;
+    
+}
+
+
+/* child4 es Principal */
+:host(#child-4) {
+    display: block;
+}
+:host(#child-4) .container {
+    width:60%;
+    height: 100%;
+    background-color: rgb(15, 248, 69);
+    position: absolute;
+    top: 0;
+    left: 20%;
+    right: 40%;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 5px;
+    resize: both;
+    z-index: 5;
+}
+
+/* Estilos para los contenedores pequeños */
+:host(#small-child-1) {
+    display: block;
+}
+:host(#small-child-1) .container {
+    background-color: #f4a261;
+    padding: 10px;
+    top: 20%;
+    height: 20%;
+}
+
+:host(#small-child-2) {
+    display: block;
+}
+:host(#small-child-2) .container {
+    background-color: #2a9d8f;
+    padding: 10px;
+    height: 20%;
+
+}
+
+:host(#small-child-3) {
+    display: block;
+}
+:host(#small-child-3) .container {
+    background-color: #e9c46a;
+    padding: 10px;
+    height: 20%;
+
+}
+
+:host(#small-child-4) {
+    display: block;
+}
+:host(#small-child-4) .container {
+    background-color: #264653;
+    color: white;
+    padding: 10px;
+    height: 20%;
+    left: 0%;
+    width: 100%;
+
+}
+
+/* Aislamiento de estilos para evitar fugas */
+/* :host {
+    display: block;
+} */
+/* :host.container {
+    width: 80px; 
+    height: 500px;
+    min-width: 180px;
+    min-height: 100px; 
+    max-width: 100%;
+    max-height: 100%;
+    resize: both;
+    overflow: auto;
+    border: 5px solid rgb(18, 236, 134);
+    background-color: rgb(46, 215, 16);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} */
+
+:host(#parent-container){ 
+    display: block;
+}
+
+:host(#parent-container) .container {
+    
+    all: initial;
+    width: 580px;
+    height: 500px;
+    min-width: 180px;
+    min-height: 100px;
+    max-width: 100%;
+    max-height: 100%;
+    resize: both;
+    overflow: auto;
+    border: 5px solid rgb(236, 18, 29);
+    background-color: rgb(216, 35, 104);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

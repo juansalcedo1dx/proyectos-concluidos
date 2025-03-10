@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Carousel</title>
+</head>
+
+<body>
+
+    <!-- Instancia del Carrusel -->
+    <wrapper-component index-id="carousel-1">
+        <!-- </wrapper-component> -->
+
+
+        <!-- <div id="wrapper-container"> La Puta Madre</div> -->
+        <custom-carousel index-id="carousel-1"
+            data-images='["images/amanecerDos.jpeg", "images/amapolaSilvestre.jpeg", "images/atardecerUno.jpeg", "images/malvones.jpeg", "images/margaritasNaranjas.jpeg"]'>
+        </custom-carousel>
+
+
+        <custom-carousel index-id="carousel-2"
+            data-images='["imagesDos/arroz.jpeg", "imagesDos/belt.jpeg", "imagesDos/frutillas.jpeg", "imagesDos/mate.jpeg", "imagesDos/nest.jpeg", "imagesDos/pant.jpeg", "imagesDos/sport men.jpeg", "imagesDos/suit men.jpeg", "imagesDos/tomates.jpeg", "imagesDos/t shirt.jpeg", "imagesDos/vegetales.jpeg"]'>
+        </custom-carousel>
+        <!-- <custom-carousel 
+    index-id="carousel-3"
+    data-images='["images/amanecerDos.jpeg", "images/amapolaSilvestre.jpeg", "images/atardecerUno.jpeg", "images/malvones.jpeg", "images/margaritasNaranjas.jpeg"]' 
+    
+   >
+</custom-carousel> -->
+
+        <script type="module" src="customCarousel.js"></script>
+        <script type="module" src="mi-boton.js"></script>
+        <!-- <script type="module" src="WrapperComponent.js"></script> -->
+        <!-- <script type="module" src="AccessorComponent.js"></script> -->
+
+        <!-- <script type="module" src="instanciaCarousel.js"></script> -->
+        <!-- <script type="module" src="InsertButtonsCarousel.js"></script> -->
+        <!-- <script type="module" src="WrapperComponentManager.js"></script> -->
+        <script type="module">
+            // import { CarouselButtonManager } from './InsertButtonsCarousel.js';
+            // import { CarouselButtonManager } from './InstanciaCarouselClase.js';
+            // import { WrapperComponentManager } from './WrapperComponentManager.js';
+
+            //  Instanciar automáticamente el conjunto de elementos en cada carrusel
+            // new CarouselButtonManager('custom-carousel[index-id="carousel-3"]');
+            // new CarouselButtonManager('body');
+            // new CarouselButtonManager('custom-carousel[index-id="carousel-1"]');
+            // document.querySelector('custom-carousel').setAttribute('index-id', 'carousel-2');
+
+            // new CarouselButtonManager('custom-carousel[index-id="carousel-2"]');
+            // import { CarouselButtonManager } from './InstanciaCarouselClaseNativo.js';
+            // new CarouselButtonManager('body');
+
+
+
+
+            // new WrapperComponentManager('#wrapper-container');
+        </script>

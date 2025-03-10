@@ -1,0 +1,28 @@
+.container {
+    width: 550px;
+    height: 220px;
+    padding: 10px;
+    border: 5px solid black;
+    background-color: red;
+    min-height: 50px;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Asegura que el contenido no se desborde */
+    align-items: center;
+    resize: both;
+}
+
+.dynamic-content {
+    width: 100%; /* Asegura que el contenido ocupe todo el ancho disponible */
+    max-width: 100%;
+    word-wrap: break-word; /* Asegura que el texto largo se divida en palabras */
+    margin-top: 0px;
+    font-weight: bold;
+    background-color: yellow;
+    overflow: hidden;
+    text-align: center;
+    white-space: normal; /* Permite saltos de línea */
+}

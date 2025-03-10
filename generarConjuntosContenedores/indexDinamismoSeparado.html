@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultiContainerManager</title>
+    <style>
+        /* Contenedor principal */
+        #main-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="main-container"></div>
+   
+    <script type="module">
+        import { MultiContainerManager } from "./EficienteSeparado.js";
+        import './simpleContainer.js'; // Importar el custom element
+        import './MiBoton.js'; // Importar el custom element
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // Crear la instancia de MultiContainerManager
+            const manager = new MultiContainerManager("#main-container");
+
+            // 🔹 Usamos un setInterval para detectar cuándo los contenedores están listos
+            const checkContainers = setInterval(() => {
+                const containers = document.querySelectorAll("#main-container simple-container");
+
+               
+            }, 100); // Revisamos cada 100ms si los contenedores ya fueron renderizados
+        });
+    </script>
+
+</body>
+</html>
