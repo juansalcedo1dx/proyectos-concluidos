@@ -161,5 +161,104 @@ class CustomCard extends HTMLElement {
 }
 
 customElements.define('custom-card', CustomCard);
-
 export {CustomCard}
+
+
+
+
+
+
+
+
+
+
+
+
+// class CustomCard extends HTMLElement {
+//   constructor() {
+//     super();
+//     this.attachShadow({ mode: 'open' });
+//   }
+
+//   connectedCallback() {
+//     this.render();
+//   }
+
+//   render() {
+//     const shadow = this.shadowRoot;
+    
+//     // Agregar estilos
+//     const style = document.createElement('style');
+//     style.textContent = `
+//       .flex {
+//         display: flex;
+//       }
+//       .justify-center {
+//         justify-content: center;
+//       }
+//       .items-center {
+//         align-items: center;
+//       }
+//       .bg-gradient-to-br {
+//         /* Definir un fondo de gradiente */
+//       }
+//     `;
+//     shadow.appendChild(style);
+    
+//     // Contenedor principal
+//     const container = document.createElement('div');
+//     container.className = "flex justify-center items-center bg-gradient-to-br";
+    
+//     // Tarjeta
+//     const card = document.createElement('div');
+//     card.className = "max-w-md w-full bg-white rounded-xl shadow-2xl overflow-hidden transform transition duration-500 hover:scale-105";
+    
+//     // Imagen
+//     const imgWrapper = document.createElement('div');
+//     imgWrapper.className = "relative";
+//     const img = document.createElement('img');
+//     img.className = "w-full h-60 object-cover";
+//     img.src = "https://images.unsplash.com/photo-1540206395-68808572332f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80";
+//     img.alt = "Nature scene";
+//     const locationTag = document.createElement('div');
+//     locationTag.className = "absolute bottom-0 right-0 bg-teal-500 text-white px-2 py-1 m-2 rounded-md text-sm font-semibold";
+//     locationTag.textContent = "Location";
+//     imgWrapper.append(img, locationTag);
+    
+//     // Contenido de la tarjeta
+//     const content = document.createElement('div');
+//     content.className = "p-6";
+    
+//     const title = document.createElement('h2');
+//     title.className = "text-2xl font-bold mb-2 text-gray-800";
+//     title.textContent = "Lorem ipsum dolor sit amet";
+    
+//     const description = document.createElement('p');
+//     description.className = "text-gray-600 mb-4";
+//     description.textContent = "Fusce orci purus, efficitur vel eros eu, cursus pretium urna. Integer efficitur lorem vitae augue auctor aliquam.";
+    
+//     const infoContainer = document.createElement('div');
+//     infoContainer.className = "flex justify-between items-center";
+    
+//     const price = document.createElement('span');
+//     price.className = "text-2xl font-bold text-gray-800";
+//     price.textContent = "$299";
+    
+//     const button = document.createElement('a');
+//     button.href = "#";
+//     button.className = "px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 transition duration-300 ease-in-out";
+//     button.textContent = "View";
+    
+//     infoContainer.append(price, button);
+//     content.append(title, description, infoContainer);
+    
+//     // Construcción del componente
+//     card.append(imgWrapper, content);
+//     container.appendChild(card);
+//     shadow.appendChild(container);
+//   }
+// }
+
+// customElements.define('custom-card', CustomCard);
+
+// export { CustomCard };

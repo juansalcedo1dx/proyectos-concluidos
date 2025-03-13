@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultiContainerManager</title>
+    <style>
+       #wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+#wrapper > div {
+    width: 100%; /* O el ancho deseado */
+    border: 1px solid black; /* Para visualización */
+    margin-bottom: 10px; /* Espacio entre los divs */
+}
+
+
+        /* Contenedor principal */
+        /* #main-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #faf6f6;
+        } */
+    </style>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <div id="main-containerTresContenedoresUno"></div>
+        <div id="main-containerTresContenedoresDos"></div>
+        <div id="main-containerUnoUno"></div>
+        <div id="main-containerUnoDos"></div>
+    </div>
+
+
+    <script type="module">
+        import { MultiContainerManager } from "./EficienteCresTresContenedoresUno.js";
+        import { MultiContainerManager } from "./EficienteSimpleDos.js";
+        import { MultiContainerManager } from "./EficienteSimpleTres.js";
+        import { MultiContainerManager } from "./EficienteSimpleTres.js";
+        import './simpleContainer.js'; // Importar el custom element
+        import './MiBoton.js'; // Importar el custom element
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // Crear la instancia de MultiContainerManager
+            const manager = new MultiContainerManagerSeccionUno("#main-container");
+            const managerDos = new MultiContainerManagerSeccionDos("#main-containerDos");
+            const managerTres = new MultiContainerManagerSeccionTres("#main-containerTres");
+
+            // 🔹 Usamos un setInterval para detectar cuándo los contenedores están listos
+            const checkContainers = setInterval(() => {
+                const containers = document.querySelectorAll("#main-container simple-container");
+
+
+            }, 100); // Revisamos cada 100ms si los contenedores ya fueron renderizados
+        });
+    </script>
+
+</body>
+
+</html>

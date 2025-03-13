@@ -3,8 +3,8 @@ export class MiBoton extends HTMLElement {
         super();
         this.attachShadow({ mode: "open" });
 
-        const button = document.createElement("button");
-        button.textContent = this.getAttribute("label") || "Click me";
+        this.button = document.createElement("button"); // Ahora es una propiedad de la clase
+        this.button.textContent = this.getAttribute("label") || "Click ";
 
         const style = document.createElement("style");
         style.textContent = `
@@ -23,7 +23,7 @@ export class MiBoton extends HTMLElement {
             }
         `;
 
-        button.addEventListener("click", () => {
+        this.button.addEventListener("click", () => {
             console.log("Evento 'boton-click' recibido correctamente.");
             alert("¡Botón presionado!");
             this.dispatchEvent(new CustomEvent("boton-click", {
@@ -32,7 +32,17 @@ export class MiBoton extends HTMLElement {
             }));
         });
 
-        this.shadowRoot.append(style, button);
+        this.shadowRoot.append(style, this.button);
+    }
+
+    static get observedAttributes() {
+        return ["label"];
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+        if (name === "label" && this.button) {
+            this.button.textContent = newValue;
+        }
     }
 }
 

@@ -6,7 +6,7 @@
  {
     width: 80%;
     height: 90%;
-    background-color: lightblue;
+    background-color: rgb(230, 189, 173);
     position: absolute;
     left: 0;
     top: 10%;
@@ -104,6 +104,34 @@
     z-index: 5;
 }
 
+:host(#child-5) {
+    display: block;
+}
+:host(#child-5) .container {
+    width: 40%;
+    height: 30%;
+    background-color: rgb(35, 17, 227);
+    position: absolute;
+    top: 0;
+    left: 150;
+    z-index: 10;
+    resize: both;
+}
+
+:host(#child) {
+    display: block;
+}
+:host(#child) .container {
+    width: 40%;
+    height: 30%;
+    background-color: rgb(220, 17, 227);
+    position: absolute;
+    top: 0;
+    left: 150;
+    z-index: 11;
+    resize: both;
+}
+
 /* Estilos para los contenedores pequeños */
 :host(#small-child-1) {
     display: block;
@@ -147,6 +175,46 @@
     width: 100%;
 
 }
+
+:host(#small-1) {
+    display: block;
+}
+:host(#small-1) .container {
+    background-color: #61f492;
+    padding: 10px;
+    top: 20%;
+    height: 20%;
+}
+
+
+:host(#small-2) {
+    display: block;
+}
+:host(#small-2) .container {
+    background-color: #f4a261;
+    padding: 10px;
+    top: 20%;
+    height: 20%;
+}
+
+
+:host(#small-3) {
+    display: block;
+}
+:host(#small-3) .container {
+    background-color: #f5f122;
+    padding: 10px;
+    top: 20%;
+    height: 20%;
+}
+
+
+
+
+
+
+
+
 
 /* Aislamiento de estilos para evitar fugas */
 /* :host {

@@ -1,0 +1,97 @@
+:host(#wrapper1) {
+    display: block;
+}
+
+:host(#wrapper1) .container
+ {
+    width: 80%;
+    height: 90%;
+    background-color: rgb(240, 74, 9);
+    position: absolute;
+    left: 0;
+    top: 10%;
+    bottom: 0;
+    z-index: 3;
+    resize: both;
+
+}
+:host(#wrapper) .dynamic-content {
+
+        width: 100%; /* Asegura que el contenido ocupe todo el ancho disponible */
+        max-width: 100%;
+        word-wrap: break-word; /* Asegura que el texto largo se divida en palabras */
+        margin-top: 0px;
+        font-weight: bold;
+        background-color: yellow;
+        overflow: hidden;
+        text-align: center;
+        white-space: normal; /* Permite saltos de línea */
+    }
+
+:host(#child) {
+    display: block;
+}
+:host(#child) .container {
+    width: 40%;
+    height: 30%;
+    background-color: rgb(17, 38, 227);
+    position: absolute;
+    top: 0;
+    left: 150;
+    z-index: 11;
+    resize: both;
+}
+
+:host(#small-child-1) {
+    display: block;
+}
+:host(#small-child-1) .container {
+    background-color: #f4a261;
+    padding: 10px;
+    top: 20%;
+    height: 20%;
+}
+
+:host(#small-child-2) {
+    display: block;
+}
+:host(#small-child-2) .container {
+    background-color: #2a9d8f;
+    padding: 10px;
+    height: 20%;
+
+}
+
+:host(#small-child-3) {
+    display: block;
+}
+:host(#small-child-3) .container {
+    background-color: #cad622;
+    padding: 10px;
+    height: 20%;
+
+}
+
+:host(#parent-container){ 
+    display: block;
+}
+
+:host(#parent-container) .container {
+    
+    all: initial;
+    width: 580px;
+    height: 500px;
+    min-width: 180px;
+    min-height: 100px;
+    max-width: 100%;
+    max-height: 100%;
+    resize: both;
+    overflow: auto;
+    border: 5px solid rgb(18, 236, 47);
+    background-color: rgb(216, 168, 35);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,7 +1,7 @@
 import {SearchInput} from './componentes.js/buscador.js'
 import {HamburgerMenu} from './componentes.js/menuHamburgueza.js'
 import {AwesomeWebsiteBanner} from './componentes.js/publicidad.js'
-import {CustomCard} from './componentes.js/targeta.js'
+// import {CustomCard} from './componentes.js/targeta.js'
 import {CustomCard2} from './componentes.js/targeta2.js'
 import {CustomCard3} from './componentes.js/targeta3.js'
 import {CustomCard4} from './componentes.js/targeta4.js'

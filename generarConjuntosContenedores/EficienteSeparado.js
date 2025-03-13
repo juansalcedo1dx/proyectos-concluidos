@@ -67,15 +67,17 @@ export class MultiContainerManager {
     // );
 
     // Crear contenedores hijos y agregarlos al shadowRoot de `wrapper`
-    const child1 = document.createElement("simple-container");
-    const child2 = document.createElement("simple-container");
+    // const child1 = document.createElement("simple-container");
+    // const child2 = document.createElement("simple-container");
     const child3 = document.createElement("simple-container");
     const child4 = document.createElement("simple-container");
+    const child5 = document.createElement("simple-container");
 
-    child1.id = "child-1";
-    child2.id = "child-2";
+    // child1.id = "child-1";
+    // child2.id = "child-2";
     child3.id = "child-3";
     child4.id = "child-4";
+    child5.id = "child-5";
 
     // Esperamos que el ShadowRoot de 'wrapper' esté listo
     await this.waitForShadowRoot(wrapper);
@@ -84,12 +86,29 @@ export class MultiContainerManager {
     const shadowRootWrapper = wrapper.shadowRoot;
     const containerWrapper = shadowRootWrapper.querySelector(".container");
 
+    // reacion de un contenedor, compacto. Entre 90 y 105.
+
+    const child = document.createElement("simple-container");
+    child.id = "child";
     if (containerWrapper) {
       // Agregar los contenedores hijos dentro del contenedor de 'wrapper'
-      containerWrapper.appendChild(child1);
-      containerWrapper.appendChild(child2);
+      containerWrapper.appendChild(child);
+    } else {
+      console.error("No se encontró .container dentro de wrapper");
+      return;
+    }
+    await Promise.all([this.waitForShadowRoot(child)]);
+    child.setContent("child solarium  ");
+    // Aplicar estilos a los hijos con inyección de CSS
+    [child].forEach((child) => this.injectStyles(child, "./styles.css"));
+
+    if (containerWrapper) {
+      // Agregar los contenedores hijos dentro del contenedor de 'wrapper'
+      // containerWrapper.appendChild(child1);
+      // containerWrapper.appendChild(child2);
       containerWrapper.appendChild(child3);
       containerWrapper.appendChild(child4);
+      containerWrapper.appendChild(child5);
     } else {
       console.error("No se encontró .container dentro de wrapper");
       return;
@@ -97,20 +116,22 @@ export class MultiContainerManager {
 
     // Esperar que el shadowRoot de cada 'child' esté listo
     await Promise.all([
-      this.waitForShadowRoot(child1),
-      this.waitForShadowRoot(child2),
+      // this.waitForShadowRoot(child1),
+      // this.waitForShadowRoot(child2),
       this.waitForShadowRoot(child3),
       this.waitForShadowRoot(child4),
+      this.waitForShadowRoot(child5),
     ]);
 
     // Asignar contenido a cada contenedor hijo
-    child1.setContent("child1 Encabezado");
-    child2.setContent("child2 Izquierdo");
+    // child1.setContent("child1 Encabezado");
+    // child2.setContent("child2 Izquierdo");
     child3.setContent("child3 Derecho");
     child4.setContent("child4 Principal");
+    child5.setContent("child5 Extra  ");
 
     // Aplicar estilos a los hijos con inyección de CSS
-    [child1, child2, child3, child4].forEach((child) =>
+    [child3, child4, child5, child].forEach((child) =>
       this.injectStyles(child, "./styles.css")
     );
 
@@ -201,40 +222,42 @@ export class MultiContainerManager {
     // }
 
     let element = smallChild1; // Elemento base
-let hierarchy = [];
-let shadowHosts = new Set(); // Para evitar repetir el mismo host
-let level = 0; // Para manejar la indentación
+    let hierarchy = [];
+    let shadowHosts = new Set(); // Para evitar repetir el mismo host
+    let level = 0; // Para manejar la indentación
 
-while (element) {
-    let parent = element.parentElement || element.getRootNode().host;
-    if (!parent) break; // Si no hay más padres, terminamos
+    while (element) {
+      let parent = element.parentElement || element.getRootNode().host;
+      if (!parent) break; // Si no hay más padres, terminamos
 
-    // Generamos la indentación para cada nivel
-    let indent = ' '.repeat(level * 2);  // Incrementamos el nivel de indentación a medida que subimos en la jerarquía
-    let info = `${indent}${parent.tagName.toLowerCase()}`;
+      // Generamos la indentación para cada nivel
+      let indent = " ".repeat(level * 2); // Incrementamos el nivel de indentación a medida que subimos en la jerarquía
+      let info = `${indent}${parent.tagName.toLowerCase()}`;
 
-    // Añadimos información adicional como id y clase
-    if (parent.id) info += `#${parent.id}`;
-    if (parent.className) info += `.${parent.className.replace(/\s+/g, '.')}`;
+      // Añadimos información adicional como id y clase
+      if (parent.id) info += `#${parent.id}`;
+      if (parent.className) info += `.${parent.className.replace(/\s+/g, ".")}`;
 
-    // Verificar si está en el Shadow DOM o en el Light DOM
-    if (parent.getRootNode() instanceof ShadowRoot) {
+      // Verificar si está en el Shadow DOM o en el Light DOM
+      if (parent.getRootNode() instanceof ShadowRoot) {
         info += " (Dentro del Shadow DOM)";
         if (!shadowHosts.has(parent)) {
-            hierarchy.push(`${indent}🌟 Host del Shadow DOM: ${parent.tagName.toLowerCase()}`);
-            shadowHosts.add(parent); // Marcar como ya procesado
+          hierarchy.push(
+            `${indent}🌟 Host del Shadow DOM: ${parent.tagName.toLowerCase()}`
+          );
+          shadowHosts.add(parent); // Marcar como ya procesado
         }
-    } else {
+      } else {
         info += " (Dentro del Light DOM)";
+      }
+
+      hierarchy.push(info);
+      element = parent; // Subimos un nivel
+      level++; // Aumentamos el nivel para la siguiente iteración
     }
 
-    hierarchy.push(info);
-    element = parent; // Subimos un nivel
-    level++; // Aumentamos el nivel para la siguiente iteración
-}
-
-console.log("📌 Jerarquía completa:");
-console.log(hierarchy.reverse().join("\n"));
+    console.log("📌 Jerarquía completa:");
+    console.log(hierarchy.reverse().join("\n"));
 
     await Promise.all([
       this.waitForShadowRoot(smallChild1),
@@ -251,6 +274,39 @@ console.log(hierarchy.reverse().join("\n"));
 
     // Aplicar estilos a los contenedores pequeños
     [smallChild1, smallChild2, smallChild3, smallChild4].forEach((child) =>
+      this.injectStyles(child, "./styles.css")
+    );
+
+    const small1 = document.createElement("simple-container");
+    const small2 = document.createElement("simple-container");
+    const small3 = document.createElement("simple-container");
+
+    small1.id = "small-1";
+    small2.id = "small-2";
+    small3.id = "small-3";
+
+    const mainContainera = child5.shadowRoot.querySelector(".container");
+    if (mainContainera) {
+      mainContainera.appendChild(small1);
+      mainContainera.appendChild(small2);
+      mainContainera.appendChild(small3);
+    } else {
+      console.error("No se encontró .container dentro de child4");
+      return;
+    }
+
+    await Promise.all([
+      this.waitForShadowRoot(small1),
+      this.waitForShadowRoot(small2),
+      this.waitForShadowRoot(small3),
+    ]);
+
+    // Asignar contenido a los contenedores pequeños
+    small1.setContent("Small1 Comprar");
+    small2.setContent("Small2 Pedir");
+    small3.setContent("Small3 Contratar");
+
+    [small1, small2, small3].forEach((child) =>
       this.injectStyles(child, "./styles.css")
     );
 
@@ -326,3 +382,19 @@ console.log(hierarchy.reverse().join("\n"));
     });
   }
 }
+
+// const child = document.createElement("simple-container");
+// child.id = "child";
+// if (containerWrapper) {
+//   // Agregar los contenedores hijos dentro del contenedor de 'wrapper'
+
+//   containerWrapper.appendChild(child);
+// } else {
+//   console.error("No se encontró .container dentro de wrapper");
+//   return;
+// }
+// await Promise.all([this.waitForShadowRoot(child)]);
+// child.setContent("child solarium  ");
+
+// // Aplicar estilos a los hijos con inyección de CSS
+// [child].forEach((child) => this.injectStyles(child, "./styles.css"));
