@@ -1,0 +1,116 @@
+:host(#parent-container).container{ 
+    display: flex;
+}
+
+:host(#parent-container) .container {
+    
+    all: initial;
+    width:100%;
+    height: 60rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+:host(#wrapper1) .container{
+    display: flex;
+}
+
+:host(#wrapper1) .container
+ {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgb(9, 186, 240); */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+:host(#wrapper) .dynamic-content {
+
+        width: 100%; /* Asegura que el contenido ocupe todo el ancho disponible */
+        max-width: 100%;
+        word-wrap: break-word; /* Asegura que el texto largo se divida en palabras */
+        margin-top: 0px;
+        font-weight: bold;
+        background-color: #1100ff;
+        overflow: hidden;
+        text-align: center;
+        white-space: normal; /* Permite saltos de línea */
+    }
+
+:host(#child) .container {
+    display: grid;
+}
+:host(#child) .container {
+display: flex;
+width:100% ;
+height: 100%;
+/* background-color: rgb(228, 241, 32); */
+position: absolute;
+display: grid;
+gap:3px;
+grid-auto-flow:dense;
+grid-auto-rows:35rem;
+grid-template-columns:repeat(auto-fit, minmax(15rem,1fr)); 
+}
+
+:host(#small-child-1) .container {
+    display: flex;
+}
+:host(#small-child-1) .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #2432f1;
+    width: 100%;
+    height: 100%;
+}
+
+:host(#small-child-2).container {
+    display: flex;
+}
+:host(#small-child-2) .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: 1px solid  #2a9d8f ;
+
+}
+:host(#small-child-3) .container {
+    display: block;
+}
+:host(#small-child-3) .container { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #f82415;
+}
+
+:host(#small-child-4) .container {
+    display: block;
+}
+:host(#small-child-4) .container { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #f82415;
+}
+
+.container > div:nth-child(1) {
+    display: none;
+}
+
+
+
+
+
