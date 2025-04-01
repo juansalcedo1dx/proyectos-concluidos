@@ -47,8 +47,8 @@ export class MultiContainerManagerTresUno {
     ]);
 
     // Obtener el shadowRoot de 'parentContainer' y agregar 'wrapper' dentro del contenedor
-    const shadowRootParent = parentContainer.shadowRoot;
-    const conta = shadowRootParent.querySelector(".container");
+     ;
+    const conta = parentContainer.shadowRoot.querySelector(".container");
     if (conta) {
       conta.appendChild(wrapper); // Ahora `wrapper` estará dentro del `shadowRoot`
     } else {
@@ -60,8 +60,8 @@ export class MultiContainerManagerTresUno {
     await this.waitForShadowRoot(wrapper);
 
     // Obtener el shadowRoot de 'wrapper' y buscar el contenedor con clase ".container"
-    const shadowRootWrapper = wrapper.shadowRoot;
-    const containerWrapper = shadowRootWrapper.querySelector(".container");
+     ;
+    const containerWrapper = wrapper.shadowRoot .querySelector(".container");
 
     const child = document.createElement("simple-container");
     child.id = "child";
@@ -115,16 +115,16 @@ export class MultiContainerManagerTresUno {
       ])
     );
 
-    // Crear un Custom Element "mi-boton"
-    const myButton1 = document.createElement("custom-logo");
+    // Crear un Custom Element "mi-boton"  custom-logo
+    const myButton1 = document.createElement("");
     const smallContainer = smallChild1.shadowRoot.querySelector(".container");
     if (smallContainer) {
       smallContainer.appendChild(myButton1);
     } else {
       console.error("No se encontró el contenedor dentro de smallChild1");
     }
-
-    const myButton3 = document.createElement("mi-boton");
+//                                        mi-boton
+    const myButton3 = document.createElement("");
     const smallContainer3 = smallChild3.shadowRoot.querySelector(".container");
     if (smallContainer3) {
       smallContainer3.appendChild(myButton3);

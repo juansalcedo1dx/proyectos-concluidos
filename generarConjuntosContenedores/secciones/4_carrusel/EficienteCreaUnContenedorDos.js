@@ -82,7 +82,7 @@ export class MultiContainerManagerUnoDos {
     ]);
 
     // Crear un Custom Element "custom-carousel2"
-    const myButton1 = document.createElement("custom-carousel2");
+    const myButton1 = document.createElement("");
     myButton1.setAttribute("label", "Click Estúpido");// Buscar el contenedor dentro del shadowRoot de smallChild1
     const smallContainer = child.shadowRoot.querySelector(".container");
     if (smallContainer) {

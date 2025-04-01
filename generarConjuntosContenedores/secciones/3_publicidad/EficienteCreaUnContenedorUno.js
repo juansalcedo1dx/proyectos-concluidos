@@ -37,9 +37,9 @@ export class MultiContainerManagerUnoUno {
     const conta = shadowRootParent.querySelector(".container");
     conta.appendChild(wrapper);
 
-    // Configuración dinámica de los hijos
+    // Configuración dinámica de los hijos   awesome-website-banner
     const childrenConfig = [
-      { id: "child1", customElement: "awesome-website-banner" },
+      { id: "child1", customElement: "" },
      
    
      // Agrega más configuraciones aquí

@@ -117,10 +117,10 @@ export class MultiContainerManagerCuatroUno {
     );
 
     // Crear un Custom Element "mi-boton" para cada contenedor
-    const myButton1 = document.createElement("mi-boton");
-    const myButton2 = document.createElement("mi-boton");
-    const myButton3 = document.createElement("mi-boton");
-    const myButton4 = document.createElement("mi-boton"); // Nuevo botón para el cuarto contenedor
+    const myButton1 = document.createElement("");
+    const myButton2 = document.createElement("");
+    const myButton3 = document.createElement("");
+    const myButton4 = document.createElement(""); // Nuevo botón para el cuarto contenedor
 
     // Buscar el contenedor dentro del shadowRoot de smallChild1
     const smallContainer1 = smallChild1.shadowRoot.querySelector(".container");
